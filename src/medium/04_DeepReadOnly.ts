@@ -17,7 +17,7 @@ type Expected = {
   readonly y: 'hey' 
 }
 
-// 如何T不是对象就停止递归
+// 如果T不是对象就停止递归
 type DeepReadonly<T> = keyof T extends never
   ? T
   : { readonly [k in keyof T]: DeepReadonly<T[k]> };
